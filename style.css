@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --Primary: #010103;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui;
+    scroll-behavior: smooth;
+}
+/* Global Styles */
+
+body{
+    background-color: #1e1e1e;
+}
+
+.movie__text__color{
+    color: crimson;
+}
+/* Nav */
+
+.nav__content{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    top: 10px;
+    padding: 0 80px;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.nav__logo--wrapper{
+    max-width: 95px;
+}
+
+.nav__logo{
+    width: 100%;
+    filter: invert(0.9);
+}
+
+.nav__left,
+.nav__right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav__link{
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 200;
+}
+
+.nav__input--wrapper {
+    position: relative;
+  }
+
+.nav__input{
+    background-color: transparent;
+    border-radius: 40px;
+    border: none;
+    padding: 14px 4px 14px 40px;
+    font-size: 18px;
+    width: 0px;
+    color: white;
+    margin-right: 24px; 
+    cursor: default;
+    transition: width 500ms ease;
+}
+
+.nav__icon {
+    position: absolute;
+    left: 13px;
+    top: 14px;
+    cursor: pointer;
+  }
+
+.nav__icon__settings{
+    color: white;
+    font-size: 19px;
+}
+
+.nav__input:focus,
+.nav__input:active {
+  width: 240px;
+  outline: 2px #fff solid;
+  cursor: text;
+}
+
+.nav__icon{
+    filter: invert(0.9);
+    font-size: 20px;
+}
+
+/* Movie Background */
+
+.movie__background--wrapper{
+    position: relative;
+    height: 525px;
+    max-width: 100%;
+    overflow: hidden;
+    box-shadow: 0 60px 50px 0 rgb(5, 5, 5, 0.45);
+}
+
+.movie__background--image{
+    filter: opacity(30%);
+}
+
+/* Movie Background Text */
+
+.movie__background__text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:white;
+    width:100%;
+    top: 35%;
+    right: 0%;
+    padding: 0 16px;
+}
+
+.movie__background__title{
+    font-size: 80px;
+    color: white;
+    font-weight: 200;
+}
+
+.movie__background__para{
+    font-size: 26px;
+    color: white;
+    font-weight: 200;
+}
+
+.movie__input--wrapper{
+    position: relative;
+}
+
+.movie__background__search{
+    margin-top: 40px;
+}
+
+.movie__input{
+    border-radius: 40px;
+    border: 2px white solid;
+    background-color: transparent;
+    padding: 24px 60px 24px 30px;
+    font-size: 24px;
+    max-width: 100%;
+    transition: 400ms ease;
+    color: white;
+}
+
+.movie__input:focus,
+.movie__input:active {
+  transform: scale(1.02);
+  outline: none;
+  box-shadow: 0px 0px 8px crimson
+}
+
+.movie__input:focus + .movie__search {
+  transform: scale(1.02), translateY(-50%);
+}
+
+.search__icon{
+    color: white;
+    font-size: 26px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 24px;
+    transition: 400ms ease;
+    cursor: pointer;
+}
+
+.search__icon:hover{
+    transform: translateY(-50%) scale(1.1);
+}
+
+.search__icon:active{
+    transform: translateY(-50%) scale(0.8);
+}
+
+/* Movies */
+
+.container{
+    padding: 80px 0;
+}
+
+.row{
+    margin: 0 40px;
+}
+
+.movies__content{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie__top{
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+}
+
+.movie__search{
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.movie__search__result{
+    padding: 8px 0;
+    margin-left: 24px;
+    font-weight: 200;
+    text-shadow: 1px 1px 10px crimson, 1px 1px 10px crimson;
+    color: crimson;
+    border-bottom: 1.5px crimson solid;
+    font-size: 24px;
+    display: none;
+}
+
+.movie__search__result-visible .movie__search__result{
+    display: block;
+}
+
+.movie {
+    width: 198px;
+    margin: 24px 8px;
+    background-color: #1e1e1e;
+    color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 12px 0px rgb(5, 5, 5, 0.45);
+    position: relative;
+}
+
+.movie__invisible{ 
+    visibility: hidden;
+}
+
+.movie__img--wrapper{
+    background-color: #1e1e1e;
+    width: 100%;
+    max-height: 288px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.movie__img--wrapper:hover .movie__img {
+    transform: scale(1.04);
+    filter: opacity(45%) blur(4px);
+  }
+  
+  .movie__img--wrapper:hover .movie__info--list {
+    opacity: 100%;
+    transition: opacity 800ms;
+  }
+  
+  .movie__img--wrapper:hover .movie__info--title {
+    opacity: 100%;
+    transition: opacity 800ms;
+  }
+
+.movies__list{
+    margin-top: 60px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+}
+
+.fa-spinner, .movies__list--loading{
+    font-size: 64px;
+    color: crimson;
+    display: none !important;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: loading 1000ms infinite
+  
+  }
+
+  .movies__list--loading-visible{
+    display: block !important;
+    
+    }
+    
+    @keyframes loading{
+      0%{
+        transform: rotate(0deg);
+      }
+    
+      100%{
+        transform: rotate(360deg)
+      }
+    }
+
+.movie__img {
+    width: 100%;
+    max-height: 288px;
+    height: 288px;
+    transition: all 400ms ease;
+    z-index: -2;
+  }
+
+.movie__title{
+    font-size: 24px;
+    color: white;
+    font-weight: 200;
+    margin: 8px 0 24px 0;
+    padding: 0 8px;
+    text-align: center;
+}
+
+.movie__info--list {
+    position: absolute;
+    top: 45%;
+    left: 8px;
+    transform: translateY(-50%);
+    width: 90%;
+    z-index: 1;
+    opacity: 0%;
+    transition: opacity 200ms;
+  }
+  
+  .movie__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding: 0 8px;
+    color: #fff;
+  }
+
+  .movie__info:first-child {
+    margin-top: 60px;
+  }
+  
+  .movie__info--text {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .movie__info--icon {
+    color: #fff;
+  }
+  
+  .movie__info--title {
+    position: absolute;
+    text-align: left;
+    color: #fff;
+    font-size: 20px;
+    top: 24px;
+    left: 16px;
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+
+  @media (max-width: 840px){
+    .movie__top{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .movie__search{
+      margin-bottom: 8px;
+    }
+  
+    .movie__search__result{
+      margin: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+  
+    .row{
+      margin: 0 16px;
+    }
+  
+    .movies__list{
+      width: 100%;
+    }
+  
+    .nav__content {
+      padding: 0 40px;
+    }
+  
+    .nav__link {
+      font-size: 18px;
+    }
+  
+    .nav__logo--wrapper {
+      width: 72px;
+    }
+  
+    .nav__input:focus,
+    .nav__input:active {
+      width: 200px;
+      font-size: 14px;
+    }
+  
+    .movie {
+      width: 180px;
+    }
+  
+    .movie__info--title {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .nav__content{
+      padding-top: 24px;
+    }
+  
+    .nav__link {
+      font-size:  16px;
+    }
+  
+    .nav__icon,
+    .nav__input, .nav__logo--wrapper{
+      display: none;
+      visibility: hidden;
+    }
+  
+    .nav__logo--wrapper{
+      margin-right: 8px;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .movie {
+      width: 124px;
+    }
+  
+    .movie__img--wrapper{
+      max-height: 188px;
+    }
+  
+    .movie__img{
+      max-height: 188px;
+    }
+  
+    .movie__background__title {
+      font-size: 40px;
+    }
+  
+    .movie__background__para {
+      font-size: 18px;
+    }
+  
+    .movie__input {
+      padding: 16px 0px 16px 30px;
+    }
+  
+    .movie__search__result{
+      font-size: 20px;
+    }
+  
+    .movie__info--title{
+      font-size: 12px;
+    }
+  
+    .movie__info{
+      margin-bottom: 24px;
+    }
+  
+    .movie__info:first-child {
+      margin-top: 40px;
+  }
+  
+    .movie__info--text{
+      font-size: 12px;
+    }
+    
+    .movie__info--icon{
+      font-size: 12px;
+    }
+  
+    .movie__search__result{
+      font-size: 18px;
+    }
+   
+  }

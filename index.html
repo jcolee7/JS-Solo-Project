@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film+</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/ba54989621.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <section id="landing">
+      <div class="movie__background">
+        <figure class="movie__background--wrapper">
+          <div class="nav__content">
+            <div class="nav__left">
+              <figure class="nav__logo--wrapper">
+                <img src="assets/movielogo.png" alt="" class="nav__logo" />
+              </figure>
+              <a href="#" class="nav__link">Home</a>
+              <a href="#" class="nav__link">Contact</a>
+            </div>
+            <div class="nav__right">
+              <div class="nav__input--wrapper">
+                <input
+                  type="text"
+                  placeholder="Find a Movie"
+                  class="nav__input"
+                  onkeyup="searchBarEnter(event)"
+                />
+                <i class="fa-solid fa-magnifying-glass nav__icon" onclick="searchActive()" aria-hidden="true"></i>
+                <i class="fa-solid fa-gear nav__icon__settings"></i>
+              </div>
+            </div>
+          </div>
+          <img
+            src="assets/moviebackground.jpg"
+            alt=""
+            class="movie__background--image"
+          />
+          <div class="movie__background__text">
+            <h1 class="movie__background__title">
+              Films<span class="movie__text__color">+</span>
+            </h1>
+            <para class="movie__background__para"
+              >With over <span class="movie__text__color">3000</span> movies on
+              Films<span class="movie__text__color">+</span>, the possibilities
+              are endless!</para
+            >
+            <div class="movie__background__search">
+              <div class="movie__input--wrapper">
+                <input
+                  type="text"
+                  placeholder="Find a Movie"
+                  class="movie__input"
+                  onkeyup="searchBarEnter(event)"
+                />
+                <i class="fa-solid fa-magnifying-glass search__icon" onclick="searchBarClick()"></i>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+    <section id="movies">
+      <div class="container">
+        <div class="row">
+          <div class="movies__content">
+            <div class="movie__top">
+              <h2 class="movie__search">Search results for:</h2>
+              <h2 class="movie__search__result">""</h2>
+            </div>
+            <div class="movies__list" id="movies-list">
+              <i class="fa-solid fa-spinner movies__list--loading" aria-hidden="true"></i>
+                <div class="movie">
+                  <figure class="movie__img--wrapper">
+                    <img src="assets/poster.jpg" alt="" class="movie__img">
+                    <h3 class="movie__info--title">Godzilla vs. Kong</h3>
+                    <div class="movie__info--list">
+                      <div class="movie__info" class="movie__info1">
+                        <i class="fa-solid fa-clock movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">113m</p>
+                      </div>
+                      <div class="movie__info" class="movie__info2">
+                        <i class="fa-solid fa-star movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">4.3</p>
+                      </div>
+                      <div class="movie__info" class="movie__info3">
+                        <i class="fa-solid fa-earth-americas movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">English</p>
+                      </div>
+                    </div>
+                  </figure>
+                  <h4 class="movie__title">Godzilla vs. Kong</h4>
+                </div>
+                <div class="movie">
+                  <figure class="movie__img--wrapper">
+                    <img src="assets/poster2.jpg" alt="" class="movie__img">
+                    <h3 class="movie__info--title">The Dark Knight</h3>
+                    <div class="movie__info--list">
+                      <div class="movie__info" class="movie__info1">
+                        <i class="fa-solid fa-clock movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">152m</p>
+                      </div>
+                      <div class="movie__info" class="movie__info2">
+                        <i class="fa-solid fa-star movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">4.9</p>
+                      </div>
+                      <div class="movie__info" class="movie__info3">
+                        <i class="fa-solid fa-earth-americas movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">English</p>
+                      </div>
+                    </div>
+                  </figure>
+                  <h4 class="movie__title">The Dark Knight</h4>
+                </div>
+                <div class="movie">
+                  <figure class="movie__img--wrapper">
+                    <img src="assets/poster3.jpg" alt="" class="movie__img">
+                    <h3 class="movie__info--title">Nope</h3>
+                    <div class="movie__info--list">
+                      <div class="movie__info" class="movie__info1">
+                        <i class="fa-solid fa-clock movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">130m</p>
+                      </div>
+                      <div class="movie__info" class="movie__info2">
+                        <i class="fa-solid fa-star movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">2.8</p>
+                      </div>
+                      <div class="movie__info" class="movie__info3">
+                        <i class="fa-solid fa-earth-americas movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">English</p>
+                      </div>
+                    </div>
+                  </figure>
+                  <h4 class="movie__title">Nope</h4>
+                </div>
+                <div class="movie">
+                  <figure class="movie__img--wrapper">
+                    <img src="assets/poster4.jpg" alt="" class="movie__img">
+                    <h3 class="movie__info--title">Dune: Part Two</h3>
+                    <div class="movie__info--list">
+                      <div class="movie__info" class="movie__info1">
+                        <i class="fa-solid fa-clock movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">166m</p>
+                      </div>
+                      <div class="movie__info" class="movie__info2">
+                        <i class="fa-solid fa-star movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">4.5</p>
+                      </div>
+                      <div class="movie__info" class="movie__info3">
+                        <i class="fa-solid fa-earth-americas movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">English</p>
+                      </div>
+                    </div>
+                  </figure>
+                  <h4 class="movie__title">Dune: Part Two</h4>
+                </div>
+                <div class="movie">
+                  <figure class="movie__img--wrapper">
+                    <img src="assets/poster5.jpg" alt="" class="movie__img">
+                    <h3 class="movie__info--title">No Time To Die</h3>
+                    <div class="movie__info--list">
+                      <div class="movie__info" class="movie__info1">
+                        <i class="fa-solid fa-clock movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">163m</p>
+                      </div>
+                      <div class="movie__info" class="movie__info2">
+                        <i class="fa-solid fa-star movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">3.6</p>
+                      </div>
+                      <div class="movie__info" class="movie__info3">
+                        <i class="fa-solid fa-earth-americas movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">English</p>
+                      </div>
+                    </div>
+                  </figure>
+                  <h4 class="movie__title">No Time To Die</h4>
+                </div>
+                <div class="movie">
+                  <figure class="movie__img--wrapper">
+                    <img src="assets/poster6.jpg" alt="" class="movie__img">
+                    <h3 class="movie__info--title">Oppenheimer</h3>
+                    <div class="movie__info--list">
+                      <div class="movie__info" class="movie__info1">
+                        <i class="fa-solid fa-clock movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">180</p>
+                      </div>
+                      <div class="movie__info" class="movie__info2">
+                        <i class="fa-solid fa-star movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">3.6</p>
+                      </div>
+                      <div class="movie__info" class="movie__info3">
+                        <i class="fa-solid fa-earth-americas movie__info--icon" aria-hidden="true"></i>
+                        <p class="movie__info--text">English</p>
+                      </div>
+                    </div>
+                  </figure>
+                  <h4 class="movie__title">Oppenheimer</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
